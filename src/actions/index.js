@@ -1,5 +1,5 @@
 /*
-  Middleware - function that take an action an depending on the action type or payload,
+  Middleware - function that take an action ans depending on the action type or payload,
   it can let the action pass, manipulate it, log it or stop it before it reaches
   a reducer.
 */
@@ -14,6 +14,8 @@ export const FETCH_WEATHER = 'FETCH_WEATHER'
 export function fetchWeather(city) {
   const url = `${ROOT_URL}&q=${city},us`;
   const request = axios.get(url);
+
+  console.log('Request:', request);
 
   return {
     type: FETCH_WEATHER,
